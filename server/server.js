@@ -1,11 +1,15 @@
 const express = require('express');
+require("dotenv").config();
 
 const app=express();
 const PORT=5000;
+const client_id_youtube=process.env.YOUTUBE_CLIENT_ID;
+const client_secret_youtube=process.env.YOUTUBE_CLIENT_SECRET;
+const client_id_github=process.env.GITHUB_CLIENT_ID;
+const client_secret_github=process.env.GITHUB_CLIENT_SECRET;
 
 
-
-app.get('/callback',(req,res)=>{
+app.get('/callback/youtube',(req,res)=>{
 
     const code=req.query.code;
 
@@ -15,9 +19,9 @@ app.get('/callback',(req,res)=>{
 
     const tokenUrl = 'https://oauth2.googleapis.com/token';
     const data = {
-        client_id: '729323296910-9o00iiu7jsmmdqhffrsrluifa6fc6ias.apps.googleusercontent.com',
-        client_secret: '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',
-        redirect_uri: 'http://localhost:5000/callback',
+        client_id: client_id_youtube,
+        client_secret: client_secret_youtube,
+        redirect_uri: 'http://localhost:5000/callback/youtube',
         grant_type: 'authorization_code',
         code: code,
     };
@@ -56,8 +60,8 @@ app.get("/callback/github",(req,res)=>{
 
     const tokenUrl="https://github.com/login/oauth/access_token";
     const data={
-        client_id:"Ov23li2EL1x3HzTvFS7y",
-        client_secret:"da3cde0cc64b694a151792b630bda298c59c4928",
+        client_id:client_id_github,
+        client_secret:client_secret_github,
         code:code,
         redirect_uri:"http://localhost:5000/callback/github"
     }
