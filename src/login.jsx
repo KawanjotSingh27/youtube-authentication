@@ -1,4 +1,4 @@
-
+import './styles/login.css'
 
 function Login(){
 
@@ -14,10 +14,12 @@ function Login(){
     }
 
     return (
-        <div>
-          <h1>Login to Access the Private Page</h1>
-          <button onClick={googleLogin}>Login with Google</button>
-          <button onClick={githubLogin}>Login with Github</button>
+        <div id="main">
+          <p>Login to Access the Private Page</p>
+          <div id="buttons">
+            <button id="youtube" onClick={googleLogin}>Login with Google</button>
+            <button id="github" onClick={githubLogin}>Login with Github</button>
+          </div>
         </div>
     )
 }

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "login";
+    src: url("../assets/login.ttf");
+}
+
+@font-face {
+    font-family: "button";
+    src: url("../assets/button.ttf");
+}
+
+body{
+    padding:0px;
+    margin:0px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(193, 220, 243);
+}
+
+#main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:-200px;
+}
+
+p{
+    font-size: 60px;
+    font-family: login;
+}
+
+#buttons{
+    display:flex;
+    gap:30px;
+}
+
+button{
+    height:70px;
+    width: 220px;
+    border-radius: 20px;
+    font-family: button;
+    font-size: 17px;
+    border:0px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#github{
+    background-color: aquamarine;
+}
+
+#youtube{
+    background-color: rgb(243, 74, 74);
+}
