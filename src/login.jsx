@@ -10,7 +10,7 @@ function Login(){
     }
 
     function githubLogin(){
-        window.location.href=`https://github.com/login/oauth/authorize?client_id=${githubclientId}y&redirect_uri=http://localhost:5000/callback/github&scope=read:user`;
+        window.location.href=`https://github.com/login/oauth/authorize?client_id=${githubclientId}y&redirect_uri=https://youtube-github-authentication.vercel.app/api/callback/github&scope=read:user`;
     }
 
     return (
