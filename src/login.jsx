@@ -6,7 +6,7 @@ function Login(){
     const githubclientId = import.meta.env.VITE_GITHUB_CLIENT_ID
 
     function googleLogin(){
-        window.location.href=`https://accounts.google.com/o/oauth2/auth?client_id=${youtubeclientId}&redirect_uri=http://localhost:5000/callback/youtube&scope=https://www.googleapis.com/auth/youtube.readonly&response_type=code`;
+        window.location.href=`https://accounts.google.com/o/oauth2/auth?client_id=${youtubeclientId}&redirect_uri=https://youtube-github-authentication-backend.onrender.com/callback/youtube&scope=https://www.googleapis.com/auth/youtube.readonly&response_type=code`;
     }
 
     function githubLogin(){
