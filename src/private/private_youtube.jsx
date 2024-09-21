@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PrivateYoutube() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [subscriptionStatus, setSubscriptionStatus] = useState(null);
+    const navigate=useNavigate();
 
     useEffect(() => {
     const oauthToken = localStorage.getItem('oauthToken');
@@ -45,7 +47,7 @@ function PrivateYoutube() {
     <div id="private">
         <p id="private_head">Private Page</p>
         {subscriptionStatus === null && <p>Checking subscription status...</p>}
-        {subscriptionStatus === true && <p>You are subscribed to the channel.</p>}
+        {subscriptionStatus === true && navigate("/result")}
         {subscriptionStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" target="_blank" onClick={showAlert}>Subscribe here</a></>}
     </div>
     );

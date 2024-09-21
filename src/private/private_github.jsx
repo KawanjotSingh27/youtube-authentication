@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PrivateGithub() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username,setUsername]=useState("");
     const [followingStatus, setFollowingStatus] = useState(null);
+    const navigate=useNavigate();
 
     useEffect(() => {
     const oauthToken = localStorage.getItem('oauthToken');
@@ -73,7 +75,7 @@ function PrivateGithub() {
     <div id="private">
         <p id="private_head">Private Page</p>
         {followingStatus === null && <p>Checking following status...</p>}
-        {followingStatus === true && <p>You are following the account.</p>}
+        {followingStatus === true && navigate("/result")}
         {followingStatus === false && <><p>You are not following the account.</p><a href="https://github.com/bytemait" target="_blank" onClick={showAlert}>Follow here</a></>}
     </div>
     );
