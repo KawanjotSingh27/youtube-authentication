@@ -70,11 +70,11 @@ function PrivateGithub() {
     }
 
     return (
-    <div>
-        <h1>Private Page</h1>
+    <div id="private">
+        <p id="private_head">Private Page</p>
         {followingStatus === null && <p>Checking following status...</p>}
         {followingStatus === true && <p>You are following the account.</p>}
-        {followingStatus === false && <><p>You are not following the account.</p><a href="https://github.com/bytemait" onClick={showAlert}>Follow here</a></>}
+        {followingStatus === false && <><p>You are not following the account.</p><a href="https://github.com/bytemait" target="_blank" onClick={showAlert}>Follow here</a></>}
     </div>
     );
 }

@@ -42,11 +42,11 @@ function PrivateYoutube() {
     }
 
     return (
-    <div>
-        <h1>Private Page</h1>
+    <div id="private">
+        <p id="private_head">Private Page</p>
         {subscriptionStatus === null && <p>Checking subscription status...</p>}
         {subscriptionStatus === true && <p>You are subscribed to the channel.</p>}
-        {subscriptionStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" onClick={showAlert}>Subscribe here</a></>}
+        {subscriptionStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" target="_blank" onClick={showAlert}>Subscribe here</a></>}
     </div>
     );
 }
