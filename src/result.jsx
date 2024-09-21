@@ -8,6 +8,7 @@ function Result(){
 
     if(!followingStatus){
         navigate("/");
+        return null;
     }
 
     return(
