@@ -39,14 +39,12 @@ function PrivateYoutube() {
         alert("Reload the page after subscribing");
     }
 
-    useEffect(()=>{
-        if (followingStatus === true) {
-            navigate("/result", { state: { followingStatus } });
-        }
-    })
-
     if (!isLoggedIn) {
     return <div>Logging in...</div>;
+    }
+
+    if (followingStatus === true) {
+        navigate("/result", { state: { followingStatus } });
     }
 
     return (
