@@ -80,3 +80,12 @@ button:hover{
     font-size: 40px;
     font-family: monospace;
 }
+
+#resultDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+#resultBtn{
+    background-color: beige;
+}

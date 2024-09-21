@@ -7,6 +7,10 @@ function Result(){
     const location=useLocation();
     const {followingStatus}=location.state||{};
 
+    function navHome(){
+        navigate("/");
+    }
+
     useEffect(() => {
         if (!followingStatus) {
             navigate("/");
@@ -14,7 +18,10 @@ function Result(){
     }, [followingStatus, navigate]);
 
     return(
-        <p id="result">Thanks for following byte!</p>
+        <div id="resultDiv">
+            <p id="result">Thanks for following byte!</p>
+            <button id="resultBtn" onClick={navHome}>Home Page</button>
+        </div>
     )
 }
 
