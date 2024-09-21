@@ -61,6 +61,10 @@ function PrivateGithub() {
         });
     }
 
+    function showAlert(){
+        alert("Reload the page after following");
+    }
+
     if (!isLoggedIn) {
     return <div>Logging in...</div>;
     }
@@ -70,7 +74,7 @@ function PrivateGithub() {
         <h1>Private Page</h1>
         {followingStatus === null && <p>Checking following status...</p>}
         {followingStatus === true && <p>You are following the account.</p>}
-        {followingStatus === false && <p>You are not following the account.</p>}
+        {followingStatus === false && <><p>You are not following the account.</p><a href="https://github.com/bytemait" onClick={showAlert}>Follow here</a></>}
     </div>
     );
 }

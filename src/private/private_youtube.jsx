@@ -33,6 +33,10 @@ function PrivateYoutube() {
         });
     }
 
+    function showAlert(){
+        alert("Reload the page after subscribing");
+    }
+
     if (!isLoggedIn) {
     return <div>Logging in...</div>;
     }
@@ -42,7 +46,7 @@ function PrivateYoutube() {
         <h1>Private Page</h1>
         {subscriptionStatus === null && <p>Checking subscription status...</p>}
         {subscriptionStatus === true && <p>You are subscribed to the channel.</p>}
-        {subscriptionStatus === false && <p>You are not subscribed to the channel.</p>}
+        {subscriptionStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" onClick={showAlert}>Subscribe here</a></>}
     </div>
     );
 }
