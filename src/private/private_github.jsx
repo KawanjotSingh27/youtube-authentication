@@ -71,11 +71,14 @@ function PrivateGithub() {
     return <div>Logging in...</div>;
     }
 
+    if (followingStatus === true) {
+        navigate("/result", { state: { followingStatus } });
+    }
+
     return (
     <div id="private">
         <p id="private_head">Private Page</p>
         {followingStatus === null && <p>Checking following status...</p>}
-        {followingStatus === true && navigate("/result")}
         {followingStatus === false && <><p>You are not following the account.</p><a href="https://github.com/bytemait" target="_blank" onClick={showAlert}>Follow here</a></>}
     </div>
     );

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function PrivateYoutube() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [subscriptionStatus, setSubscriptionStatus] = useState(null);
+    const [followingStatus, setfollowingStatus] = useState(null);
     const navigate=useNavigate();
 
     useEffect(() => {
@@ -24,14 +24,14 @@ function PrivateYoutube() {
         .then((response) => response.json())
         .then((data) => {
             if (data.items && data.items.length > 0) {
-                setSubscriptionStatus(true);
+                setfollowingStatus(true);
             } else {
-                setSubscriptionStatus(false);
+                setfollowingStatus(false);
             }
         })
         .catch((error) => {
             console.error('Error while checking subscription: ', error);
-            setSubscriptionStatus(false);
+            setfollowingStatus(false);
         });
     }
 
@@ -43,12 +43,15 @@ function PrivateYoutube() {
     return <div>Logging in...</div>;
     }
 
+    if (followingStatus === true) {
+        navigate("/result", { state: { followingStatus } });
+    }
+
     return (
     <div id="private">
         <p id="private_head">Private Page</p>
-        {subscriptionStatus === null && <p>Checking subscription status...</p>}
-        {subscriptionStatus === true && navigate("/result")}
-        {subscriptionStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" target="_blank" onClick={showAlert}>Subscribe here</a></>}
+        {followingStatus === null && <p>Checking subscription status...</p>}
+        {followingStatus === false && <><p>You are not subscribed to the channel.</p><a href="https://www.youtube.com/@BYTE-mait" target="_blank" onClick={showAlert}>Subscribe here</a></>}
     </div>
     );
 }

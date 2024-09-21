@@ -75,3 +75,8 @@ button:hover{
 #youtube{
     background-color: rgb(243, 74, 74);
 }
+
+#result{
+    font-size: 40px;
+    font-family: monospace;
+}
