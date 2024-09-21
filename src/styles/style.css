@@ -36,6 +36,10 @@ body{
     margin-bottom:30px;
 }
 
+#private{
+    margin-top: -200px;
+}
+
 #private p:nth-child(2){
     font-size: 20px;
     font-family: button;
